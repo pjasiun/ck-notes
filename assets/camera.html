@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Camera API</title>
+        <script type="text/javascript" src="http://192.168.1.102:8080/target/target-script-min.js#anonymous"></script>
+        <script>try {window.WeinreServerId = location.hash.split("#")[1]} catch(e) {window.WeinreServerId = "anonymous"}</script>
+        <script type="text/javascript">
+                function done( picture ) {
+                    // log.innerHTML = 'done';
+                    setTimeout( function() {
+                        log.innerHTML = '<img src="file://' + picture + '" width=100 height=100 />file://' + picture + '<a href="file://' + picture + '">link</a>';
+                    // '<img src="' + Camera.takePicture() + '" width="100" height="100" />' + Camera.takePicture();
+                    }, 2000 );
+                }
+        </script>
+    </head>
+
+    <body>
+        <div id="log">test</div>
+        <script type="text/javascript">
+            var log = document.getElementById( 'log' );
+            log.innerText = 'start';
+            // log.innerHTML = "<img src='data:image/jpeg;base64," + btoa(Camera.takePicture()) + "'/>" + Camera.takePicture();
+            var picture = Camera.takePicture();
+        </script>
+
+    </body>
+</html>
